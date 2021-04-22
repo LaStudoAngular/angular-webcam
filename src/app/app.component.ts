@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebcamImage } from 'ngx-webcam';
 
 @Component({
   selector: 'cam-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-webcam';
+  // latest snapshot
+  public webcamImage: WebcamImage = null;
+
+  handleImage(webcamImage: WebcamImage) {
+    this.webcamImage = webcamImage;
+  }
 }
